@@ -25,6 +25,7 @@ body.appendChild(scoreBoard);
     guestText.innerHTML = 'GUEST'
 
     // HOME
+
     let homeFrame = document.createElement('div')
     scoreBoard.appendChild(homeFrame)
     homeFrame.className = 'scoreSquare'
@@ -34,6 +35,7 @@ body.appendChild(scoreBoard);
     homeFrame.appendChild(scoreHome)
 
     // GUEST
+
     let guestFrame = document.createElement('div')
     scoreBoard.appendChild(guestFrame)
     guestFrame.className = 'scoreSquare'
@@ -42,6 +44,15 @@ body.appendChild(scoreBoard);
     scoreGuest.innerHTML = value
     guestFrame.appendChild(scoreGuest)
 
+// Div x contenere punteggio di Home e Guest
+
+  let divPunteggi = document.createElement('div');
+  divPunteggi.className = "divPunteggi"
+  scoreBoard.appendChild(divPunteggi);
+  divPunteggi.appendChild(guestFrame)
+  divPunteggi.appendChild(homeFrame)
+  
+
 // Console
 const console = document.createElement('div') 
 console.className = 'console'
@@ -49,21 +60,59 @@ body.appendChild(console)
 
 // Console - bottoni
 
-    let bottonePlus = document.createElement('button')
-    bottonePlus.textContent = "+"
-    console.appendChild(bottonePlus)
+  //HOME
+    let bottonePlusHome = document.createElement('button')
+    bottonePlusHome.textContent = "+"
+    bottonePlusHome.className = 'bottone'
+    console.appendChild(bottonePlusHome)
 
-    let bottoneMinus = document.createElement('button')
-    bottoneMinus.textContent = "-"
-    console.appendChild(bottoneMinus)
+    let bottoneMinusHome = document.createElement('button')
+    bottoneMinusHome.textContent = "-"
+    bottoneMinusHome.className = 'bottone'
+    console.appendChild(bottoneMinusHome)
+   
 
-    let bottoneResetPunteggio = document.createElement('button')
-    bottoneResetPunteggio.textContent = 'Reset'
-    console.appendChild(bottoneResetPunteggio)
+    let bottoneResetPunteggioHome = document.createElement('button')
+    bottoneResetPunteggioHome.textContent = 'Reset'
+    bottoneResetPunteggioHome.className = "bottoneReset"
+    console.appendChild(bottoneResetPunteggioHome)
+
+    let divBottoniHome = document.createElement('div') 
+    divBottoniHome.className = 'divBottoni'
+    console.appendChild(divBottoniHome) 
+    divBottoniHome.appendChild(bottonePlusHome);
+    divBottoniHome.appendChild(bottoneMinusHome)
+    divBottoniHome.appendChild(bottoneResetPunteggioHome)
+
+  //GUEST
+
+    let bottonePlusGuest = document.createElement('button')
+    bottonePlusGuest.textContent = "+"
+    bottonePlusGuest.className = 'bottone'
+    console.appendChild(bottonePlusGuest)
+
+    let bottoneMinusGuest = document.createElement('button')
+    bottoneMinusGuest.textContent = "-"
+    bottoneMinusGuest.className = 'bottone'
+    console.appendChild(bottoneMinusGuest)
+
+
+    let bottoneResetPunteggioGuest = document.createElement('button')
+    bottoneResetPunteggioGuest.textContent = 'Reset'
+    bottoneResetPunteggioGuest.className = "bottoneReset"
+    console.appendChild(bottoneResetPunteggioGuest)
+
+    let divBottoniGuest = document.createElement('div') 
+    divBottoniGuest.className = 'divBottoni'
+    console.appendChild(divBottoniGuest) 
+    divBottoniGuest.appendChild(bottonePlusGuest);
+    divBottoniGuest.appendChild(bottoneMinusGuest)
+    divBottoniGuest.appendChild(bottoneResetPunteggioGuest)
+
 
 // Plus dello score fino al valore 99
 
-const incrementoValue = () => {
+bottonePlusHome.addEventListener('click', () => {
   if (value < 99) {
     value++;
     scoreHome.innerHTML = value;
@@ -72,13 +121,22 @@ const incrementoValue = () => {
     let valueString = value.toString();
     scoreHome.innerHTML = valueString.padStart(2,0)
   }
-}
+})
 
-bottonePlus.addEventListener('click', incrementoValue)
+bottonePlusGuest.addEventListener('click', () => {
+  if (value < 99) {
+    value++;
+    scoreGuest.innerHTML = value;
+  };
+  if (value < 10 ) {
+    let valueString = value.toString();
+    scoreGuest.innerHTML = valueString.padStart(2,0)
+  }
+})
 
 // Minus dello score che non puo andare sotto lo 0 
 
-const decrementoValue = () => {
+bottoneMinusHome.addEventListener('click', () => {
   if (value > 0) {
     value--;
     scoreHome.innerHTML = value;
@@ -87,15 +145,27 @@ const decrementoValue = () => {
     let valueString = value.toString();
     scoreHome.innerHTML = valueString.padStart(2,0)
   }
-}
+})
 
-bottoneMinus.addEventListener('click', decrementoValue)
+bottoneMinusGuest.addEventListener('click', () => {
+  if (value > 0) {
+    value--;
+    scoreGuest.innerHTML = value;
+  };
+  if (value < 10 ) {
+    let valueString = value.toString();
+    scoreGuest.innerHTML = valueString.padStart(2,0)
+  }
+})
 
 //Reset del punteggio a 0
 
-const resetValue = () => {
+bottoneResetPunteggioHome.addEventListener('click', () => {
   value = "00";
   scoreHome.innerHTML = value;
-}
+})
 
-bottoneResetPunteggio.addEventListener('click', resetValue)
+bottoneResetPunteggioGuest.addEventListener('click', () => {
+  value = "00";
+  scoreGuest.innerHTML = value;
+})

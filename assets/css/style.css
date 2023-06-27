@@ -10,6 +10,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: orange;
+
   }
   
 
@@ -17,12 +19,13 @@
   .scoreBoard {
       width: 600px;
       height: 400px;
-      background-color: orange;
-      box-shadow: 2px 2px 2px 0.7px;
+      background-color: black;
+      box-shadow: 5px 5px 5px 0.5px;
       margin-top: 80px;
       display: flex;
       justify-content: space-around;
       flex-direction: column;
+      border: 10px solid white;
 
   }
 
@@ -32,6 +35,7 @@
       height: 130px;
       display: flex;
       justify-content: center;
+      border: 2.5px solid white;
       
   }
 
@@ -43,13 +47,22 @@
     width: 100%;
   }
 
+  .divPunteggi {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row-reverse;
+      position: relative;
+      top: -60px;
+      
+  }
+
 
   h2 {
       display: inline-block;
       color: white;
       font-size: 5rem;
       font-family: 'Quantico', sans-serif;
-      
+      margin: 0;
   }
 
   h3 {
@@ -57,15 +70,44 @@
       font-size: 5rem;
       font-weight: 800;
       margin: 0;
+      padding: 0;
       font-family: 'Quantico', sans-serif;
   }
 
 
-
   .console {
-      width: 500px;
+      width: 550px;
       height: 200px;
       background-color: cornflowerblue;
       margin-top: 20px ;
       box-shadow: 2px 2px 2px 0.7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .divBottoni {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    flex-wrap: wrap;
+  }
+
+  .bottone {
+    width: 60px;
+    margin: 8px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Quantico', sans-serif;
+  }
+
+  .bottoneReset {
+      width: 100%;
+      border-radius: 20px;
+      margin: 0 30px 0 30px;
+      cursor: pointer;
+      font-family: 'Quantico', sans-serif;
+      font-size: 1rem;
   }
