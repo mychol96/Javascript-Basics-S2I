@@ -4,17 +4,26 @@
   }
   
   body {
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: orange;
-
+    background-color:rgb(136, 132, 132);
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
   }
-  
 
+  video {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100vh;
+      z-index: -1;
+      opacity: 0.75;
+  }
 
   .scoreBoard {
       width: 600px;
@@ -43,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 100px ;
+    height: 100px;
     width: 100%;
   }
 
@@ -51,9 +60,8 @@
       display: flex;
       justify-content: space-around;
       flex-direction: row-reverse;
-      position: relative;
-      top: -60px;
-      
+      position: relative; 
+      margin-bottom: 40px;    
   }
 
 
@@ -76,11 +84,14 @@
 
 
   .console {
-      width: 550px;
+      width: 400px;
       height: 200px;
-      background-color: cornflowerblue;
-      margin-top: 20px ;
+      background-color: darkgray;
+      margin-top: 40px;
+      margin-bottom:100px;
       box-shadow: 2px 2px 2px 0.7px;
+      border-radius: 10px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -95,19 +106,42 @@
   }
 
   .bottone {
-    width: 60px;
+    width:50px;
+    height: 50px;
     margin: 8px;
-    border-radius: 20px;
+    border-radius: 100px;
     font-size: 1.3rem;
     cursor: pointer;
     font-family: 'Quantico', sans-serif;
+    
   }
 
   .bottoneReset {
-      width: 100%;
+      width: 60%;
       border-radius: 20px;
-      margin: 0 30px 0 30px;
+      margin: 10px 30px 10px 30px;
       cursor: pointer;
       font-family: 'Quantico', sans-serif;
       font-size: 1rem;
+  }
+
+
+  .countdownEl {
+      color: green;
+      margin: 0;
+    
+      display: flex;
+      justify-content: center;
+      font-family: 'Quantico', sans-serif;
+      font-size: 5rem;
+      padding: 0;
+  }
+
+  #copyright {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    
+    font-size: 0.6rem;
   }

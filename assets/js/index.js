@@ -10,7 +10,8 @@ body.appendChild(scoreBoard);
 
 // Display Punteggio 
 
-  let value = "00"; 
+  let valueHome = "00"; 
+  let valueGuest = "00"; 
 
     let squadre = document.createElement('div')
     squadre.className = 'squadre'
@@ -31,7 +32,7 @@ body.appendChild(scoreBoard);
     homeFrame.className = 'scoreSquare'
 
     let scoreHome = document.createElement('h3');
-    scoreHome.innerHTML = value
+    scoreHome.innerHTML = valueHome
     homeFrame.appendChild(scoreHome)
 
     // GUEST
@@ -41,7 +42,7 @@ body.appendChild(scoreBoard);
     guestFrame.className = 'scoreSquare'
   
     let scoreGuest = document.createElement('h3');
-    scoreGuest.innerHTML = value
+    scoreGuest.innerHTML = valueGuest
     guestFrame.appendChild(scoreGuest)
 
 // Div x contenere punteggio di Home e Guest
@@ -113,23 +114,23 @@ body.appendChild(console)
 // Plus dello score fino al valore 99
 
 bottonePlusHome.addEventListener('click', () => {
-  if (value < 99) {
-    value++;
-    scoreHome.innerHTML = value;
+  if (valueHome < 99) {
+    valueHome++;
+    scoreHome.innerHTML = valueHome;
   };
-  if (value < 10 ) {
-    let valueString = value.toString();
+  if (valueHome < 10 ) {
+    let valueString = valueHome.toString();
     scoreHome.innerHTML = valueString.padStart(2,0)
   }
 })
 
 bottonePlusGuest.addEventListener('click', () => {
-  if (value < 99) {
-    value++;
-    scoreGuest.innerHTML = value;
+  if (valueGuest < 99) {
+    valueGuest++;
+    scoreGuest.innerHTML = valueGuest;
   };
-  if (value < 10 ) {
-    let valueString = value.toString();
+  if (valueGuest < 10 ) {
+    let valueString = valueGuest.toString();
     scoreGuest.innerHTML = valueString.padStart(2,0)
   }
 })
@@ -137,23 +138,23 @@ bottonePlusGuest.addEventListener('click', () => {
 // Minus dello score che non puo andare sotto lo 0 
 
 bottoneMinusHome.addEventListener('click', () => {
-  if (value > 0) {
-    value--;
-    scoreHome.innerHTML = value;
+  if (valueHome > 0) {
+    valueHome--;
+    scoreHome.innerHTML = valueHome;
   };
-  if (value < 10 ) {
-    let valueString = value.toString();
+  if (valueHome < 10 ) {
+    let valueString = valueHome.toString();
     scoreHome.innerHTML = valueString.padStart(2,0)
   }
 })
 
 bottoneMinusGuest.addEventListener('click', () => {
-  if (value > 0) {
-    value--;
-    scoreGuest.innerHTML = value;
+  if (valueGuest > 0) {
+    valueGuest--;
+    scoreGuest.innerHTML = valueGuest;
   };
-  if (value < 10 ) {
-    let valueString = value.toString();
+  if (valueGuest < 10 ) {
+    let valueString = valueGuest.toString();
     scoreGuest.innerHTML = valueString.padStart(2,0)
   }
 })
@@ -161,11 +162,40 @@ bottoneMinusGuest.addEventListener('click', () => {
 //Reset del punteggio a 0
 
 bottoneResetPunteggioHome.addEventListener('click', () => {
-  value = "00";
-  scoreHome.innerHTML = value;
+  valueHome = "00";
+  scoreHome.innerHTML = valueHome;
 })
 
 bottoneResetPunteggioGuest.addEventListener('click', () => {
-  value = "00";
-  scoreGuest.innerHTML = value;
+  valueGuest = "00";
+  scoreGuest.innerHTML = valueGuest;
 })
+
+
+
+
+// TIMER 
+
+// let timerMinutes = prompt('Quanti minuti vuoi?')
+// let startingMinutes = timerMinutes; 
+// let time = startingMinutes * 60; 
+
+// const countdownEl = document.createElement('p');
+// countdownEl.innerText = '00:00'
+// countdownEl.className = 'countdownEl'
+// scoreBoard.appendChild(countdownEl)
+
+// setInterval(updateCountdown, 1000);
+
+// function updateCountdown() {
+//   let minutes = Math.floor(time / 60);
+//   let seconds = time % 60;
+//   seconds = seconds < 10 ? '0' + seconds : seconds;
+//   minutes = minutes < 10? '0'+ minutes : minutes;
+
+//   countdownEl.innerText = `${minutes}:${seconds}`;
+//   time--;
+// }
+
+
+
