@@ -476,8 +476,8 @@ h1 {
 }
 
 .scoreSquare {
-  height: 450px;
-  max-width: 500px;
+  height: 250px;
+  max-width: 300px;
   border: 10px solid white;
 }
 
@@ -487,13 +487,13 @@ h1 {
   }
 
   h2 {
-    font-size: 9rem;
+    font-size: 7rem;
     margin-top: 80px;
     margin-bottom: 50px;
   }
   
   h3 {
-    font-size: 18rem;
+    font-size: 10rem;
   }
 
   .bottone {
