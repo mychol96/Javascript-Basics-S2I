@@ -57,7 +57,7 @@ body.appendChild(scoreBoard);
 // Console
 const console = document.createElement('div') 
 console.className = 'console'
-body.appendChild(console)
+scoreBoard.appendChild(console)
 
 // Console - bottoni
 
@@ -172,30 +172,6 @@ bottoneResetPunteggioGuest.addEventListener('click', () => {
 })
 
 
-
-
-// TIMER 
-
-// let timerMinutes = prompt('Quanti minuti vuoi?')
-// let startingMinutes = timerMinutes; 
-// let time = startingMinutes * 60; 
-
-// const countdownEl = document.createElement('p');
-// countdownEl.innerText = '00:00'
-// countdownEl.className = 'countdownEl'
-// scoreBoard.appendChild(countdownEl)
-
-// setInterval(updateCountdown, 1000);
-
-// function updateCountdown() {
-//   let minutes = Math.floor(time / 60);
-//   let seconds = time % 60;
-//   seconds = seconds < 10 ? '0' + seconds : seconds;
-//   minutes = minutes < 10? '0'+ minutes : minutes;
-
-//   countdownEl.innerText = `${minutes}:${seconds}`;
-//   time--;
-// }
 
 
 
