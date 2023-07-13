@@ -395,7 +395,7 @@ font-size: 0.6rem;
   }
 
 /* Desktop Styles */
-@media only screen and (min-width: 801px) and (max-width: 1440px){
+@media only screen and (min-width: 801px) and (max-width: 1024px){
  
   .scoreBoard {
     width: 70%;
@@ -424,6 +424,44 @@ h1 {
     
     font-size: 8rem;
   }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1025px) and (max-width: 1440px){
+ 
+  .scoreBoard {
+    width: 70%;
+    height: 60%;
+    max-width: 1200px;
+    max-height: 1000px;
+}
+
+.scoreSquare {
+  height: 280px;
+  max-width: 270px;
+  border: 3.5px solid white;
+}
+
+h1 {
+  margin-top: -90px;
+  }
+
+  h2 {
+    font-size: 7rem;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+  
+  h3 {
+    
+    font-size: 10rem;
+  }
+
+  .bottoneReset {
+    width: 20%;
+    font-size: 1rem;
+  }
+
 }
 
 /* MAXI Desktop Styles */
